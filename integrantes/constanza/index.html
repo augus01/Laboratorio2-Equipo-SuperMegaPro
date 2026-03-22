@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Constanza Araya</title>
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- CSS ESPECÍFICO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="navegacion-principal">
+            <ul class="menu-lista">
+                <li><a href="../../index.html#equipo">Equipo</a></li>
+                <li><a href="../../index.html#miembros">Integrantes</a></li>
+                <li><a href="../../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="perfil-container">
+        <a href="../../index.html" class="btn-volver">← Volver al inicio</a>
+        
+        <div class="flip-container">
+            <div class="flipper" id="flipper-card">
+                
+                <!-- ============================ -->
+                <!-- CARA FRONTAL DE LA TARJETA -->
+                <!-- ============================ -->
+                <div class="front">
+                    <!-- FOTO DEL INTEGRANTE -->
+                    <img src="../../img/avatar_Constanza.jpeg" alt="Avatar de Constanza Araya">
+                    
+                    <!-- NOMBRE DEL INTEGRANTE -->
+                    <h2>Constanza Araya</h2>
+                    
+                    <!-- ROL O CARRERA -->
+                    <p class="texto-destacado">Ingeniería Civil</p>
+                    
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #ecf0f1; margin: 10px 0;">
+
+                    <!-- INTERESES PROFESIONALES -->
+                    <div class="seccion-info">
+                        <h3>Intereses Profesionales</h3>
+                        <p>Gestión de proyectos tecnológicos, Finanzas y Operaciones.</p>
+                    </div>
+
+                    <!-- STACK TECNOLÓGICO -->
+                    <div class="seccion-info">
+                        <h3>Stack Tecnológico</h3>
+                        <div class="badges-tech">
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Excel/BI</span>
+                        </div>
+                    </div>
+
+                    <!-- BOTÓN DE INTERACCIÓN -->
+                    <button class="btn-flip" onclick="girarTarjeta()">Ver Proyectos y Redes</button>
+                </div>
+
+                <!-- ============================ -->
+                <!-- CARA TRASERA DE LA TARJETA -->
+                <!-- ============================ -->
+                <div class="back">
+                    
+                    <!-- PROYECTOS DESTACADOS -->
+                    <h2>Repositorios Destacados</h2>
+                    <ul class="lista-repos">
+                        <li>
+                            <strong>Diagramas Gantt Automáticos</strong><br>
+                            <em>- Visualización de datos de gestión laboral.</em>
+                            <div style="margin-top: 5px;"><span class="lenguaje">JavaScript</span></div>
+                        </li>
+                        <li>
+                            <strong>Análisis Financiero Startup</strong><br>
+                            <em>- Cálculo predictivo de VAN y TIR.</em>
+                            <div style="margin-top: 5px;"><span class="lenguaje">Python</span></div>
+                        </li>
+                    </ul>
+                    
+                    <!-- REDES SOCIALES -->
+                    <h2>Redes Sociales</h2>
+                    <div class="redes-sociales">
+                        <!-- REEMPLAZAR '#' POR TU LINK DE GITHUB -->
+                        <a href="#" class="icono-red" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <!-- REEMPLAZAR '#' POR TU LINK DE LINKEDIN -->
+                        <a href="#" class="icono-red" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    
+                    <!-- BOTÓN DE INTERACCIÓN -->
+                    <button class="btn-flip" onclick="girarTarjeta()">Volver al Perfil</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK SWITCH (NAVEGACIÓN RÁPIDA) -->
+        <section class="quick-switch">
+            <h3>Cambiar a otro miembro</h3>
+            <div class="avatares-switch">
+                <a href="../augusto/index.html" class="avatar-link" title="Augusto Pinto">
+                    <img src="../../img/avatar_Augusto.jpeg" alt="Augusto">
+                </a>
+                <a href="../irian/index.html" class="avatar-link" title="Irian Lopez">
+                    <img src="../../img/avatar_Irian.jpeg" alt="Irian">
+                </a>
+                <a href="../cristobal/index.html" class="avatar-link" title="Cristobal Vega">
+                    <img src="../../img/avatar_Cristobal.jpeg" alt="Cristobal">
+                </a>
+                <a href="../isidora/index.html" class="avatar-link" title="Isidora Moscoso">
+                    <img src="../../img/avatar_Isidora.jpeg" alt="Isidora">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="texto-destacado">© 2026 Grupo 1 SuperMegaPro. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIÓN (FLIP) -->
+    <script>
+        function girarTarjeta() {
+            document.getElementById('flipper-card').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

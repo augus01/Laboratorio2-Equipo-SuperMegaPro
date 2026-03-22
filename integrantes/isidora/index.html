@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Isidora Moscoso</title>
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- CSS ESPECÍFICO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="navegacion-principal">
+            <ul class="menu-lista">
+                <li><a href="../../index.html#equipo">Equipo</a></li>
+                <li><a href="../../index.html#miembros">Integrantes</a></li>
+                <li><a href="../../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="perfil-container">
+        <a href="../../index.html" class="btn-volver">← Volver al inicio</a>
+        
+        <div class="flip-container">
+            <div class="flipper" id="flipper-card">
+                
+                <!-- ============================ -->
+                <!-- CARA FRONTAL DE LA TARJETA -->
+                <!-- ============================ -->
+                <div class="front">
+                    <!-- FOTO DEL INTEGRANTE -->
+                    <img src="../../img/avatar_Isidora.jpeg" alt="Avatar de Isidora Moscoso">
+                    
+                    <!-- NOMBRE DEL INTEGRANTE -->
+                    <h2>Isidora Moscoso</h2>
+                    
+                    <!-- ROL O CARRERA -->
+                    <p class="texto-destacado">Ingeniería Civil</p>
+                    
+                    <hr style="width: 80%; border: 0; border-top: 1px solid #ecf0f1; margin: 10px 0;">
+
+                    <!-- INTERESES PROFESIONALES -->
+                    <div class="seccion-info">
+                        <h3>Intereses Profesionales</h3>
+                        <p>Arquitectura Cloud, Desarrollo Web y Sistemas Escalables.</p>
+                    </div>
+
+                    <!-- STACK TECNOLÓGICO -->
+                    <div class="seccion-info">
+                        <h3>Stack Tecnológico</h3>
+                        <div class="badges-tech">
+                            <span class="badge">AWS</span>
+                            <span class="badge">React</span>
+                            <span class="badge">Python</span>
+                        </div>
+                    </div>
+
+                    <!-- BOTÓN DE INTERACCIÓN -->
+                    <button class="btn-flip" onclick="girarTarjeta()">Ver Proyectos y Redes</button>
+                </div>
+
+                <!-- ============================ -->
+                <!-- CARA TRASERA DE LA TARJETA -->
+                <!-- ============================ -->
+                <div class="back">
+                    
+                    <!-- PROYECTOS DESTACADOS -->
+                    <h2>Repositorios Destacados</h2>
+                    <ul class="lista-repos">
+                        <li>
+                            <strong>CMDB Empresarial</strong><br>
+                            <em>- Gestión de configuración web Cloud.</em>
+                            <div style="margin-top: 5px;"><span class="lenguaje">AWS / Python</span></div>
+                        </li>
+                        <li>
+                            <strong>Interfaz de usuario ERP</strong><br>
+                            <em>- Frontend dinámico para sistemas.</em>
+                            <div style="margin-top: 5px;"><span class="lenguaje">React</span></div>
+                        </li>
+                    </ul>
+                    
+                    <!-- REDES SOCIALES -->
+                    <h2>Redes Sociales</h2>
+                    <div class="redes-sociales">
+                        <!-- REEMPLAZAR '#' POR TU LINK DE GITHUB -->
+                        <a href="#" class="icono-red" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <!-- REEMPLAZAR '#' POR TU LINK DE LINKEDIN -->
+                        <a href="#" class="icono-red" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    
+                    <!-- BOTÓN DE INTERACCIÓN -->
+                    <button class="btn-flip" onclick="girarTarjeta()">Volver al Perfil</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK SWITCH (NAVEGACIÓN RÁPIDA) -->
+        <section class="quick-switch">
+            <h3>Cambiar a otro miembro</h3>
+            <div class="avatares-switch">
+                <a href="../augusto/index.html" class="avatar-link" title="Augusto Pinto">
+                    <img src="../../img/avatar_Augusto.jpeg" alt="Augusto">
+                </a>
+                <a href="../constanza/index.html" class="avatar-link" title="Constanza Araya">
+                    <img src="../../img/avatar_Constanza.jpeg" alt="Constanza">
+                </a>
+                <a href="../irian/index.html" class="avatar-link" title="Irian Lopez">
+                    <img src="../../img/avatar_Irian.jpeg" alt="Irian">
+                </a>
+                <a href="../cristobal/index.html" class="avatar-link" title="Cristobal Vega">
+                    <img src="../../img/avatar_Cristobal.jpeg" alt="Cristobal">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="texto-destacado">© 2026 Grupo 1 SuperMegaPro. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIÓN (FLIP) -->
+    <script>
+        function girarTarjeta() {
+            document.getElementById('flipper-card').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
