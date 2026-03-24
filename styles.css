@@ -315,3 +315,108 @@ main {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
     border-color: #2980b9;
 }
+
+/* =========================================
+   11. SECCIÓN BLOGS (Estilo SuperMegaPro)
+   ========================================= */
+#blogs {
+    padding: 40px 20px;
+}
+
+.contenedor-blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    /* CAMBIO 1: Obliga a que todos los hijos midan lo mismo de alto */
+    align-items: stretch; 
+}
+
+.enlace-blog {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+    /* CAMBIO 2: Permite que el enlace ocupe todo el alto del contenedor */
+    display: flex; 
+}
+
+.tarjeta-blog {
+    background: white;
+    width: 340px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* CAMBIO 3: La tarjeta ahora ocupa el 100% del alto del enlace */
+    height: 100%; 
+}
+
+.blog-header {
+    height: 120px;
+    background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Evita que la cabecera se aplaste */
+    flex-shrink: 0; 
+}
+
+.tag-tutorial, .tag-investigacion {
+    background-color: #e67e22;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blog-cuerpo {
+    padding: 20px;
+    /* CAMBIO 4: El cuerpo crecerá para llenar el espacio vacío */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-cuerpo h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.blog-cuerpo p {
+    font-size: 0.95rem;
+    line-height: 1.6; /* Un poco más de aire para legibilidad */
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    /* CAMBIO 5: El párrafo empuja el "Leer más" hacia el fondo */
+    flex-grow: 1; 
+}
+
+.leer-mas {
+    color: #2980b9;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+    transition: letter-spacing 0.3s ease;
+    /* CAMBIO 6: Asegura que siempre esté al final de la tarjeta */
+    margin-top: auto; 
+}
+
+/* Efectos de Movimiento */
+.enlace-blog:hover {
+    transform: translateY(-8px);
+}
+
+.enlace-blog:hover .leer-mas {
+    letter-spacing: 1px;
+    color: #e67e22;
+}
+
+#titulo-blogs {
+    text-align: center;
+}
