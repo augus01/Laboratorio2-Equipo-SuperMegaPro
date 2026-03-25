@@ -27,11 +27,30 @@ El equipo está compuesto por cinco estudiantes de Ingeniería Civil:
 - **Diseño Visual:** Layout de tarjetas con sombras, bordes redondeados y navegación funcional mediante anclas.
 
 ## Estructura del Repositorio
-```
+```text
 /
-├── Laboratorio-01/
-│   ├── index.html      # Estructura y contenido del sitio
-│   ├── styles.css      # Hoja de estilos externa
-│   └── img/            # Avatares de los integrantes
+├── Dockerfile          # Configuración de Docker para Nginx
+├── index.html          # Estructura y contenido del sitio de Grupo
+├── styles.css          # Hoja de estilos externa
+├── img/                # Avatares e imágenes del proyecto
+├── integrantes/        # Páginas individuales de perfiles
+├── prueba-dockers/     # Evidencias de instalación y ejecución en Docker
 └── README.md           # Documentación del proyecto
 ```
+
+## Despliegue con Docker
+El proyecto puede ser desplegado fácilmente utilizando Docker. Se ha configurado un `Dockerfile` basado en la imagen oficial `nginx:alpine` para servir los archivos estáticos de forma ligera y eficiente.
+
+Al construir la imagen, el contenido de la carpeta del proyecto se copia directamente a la ruta interna del servidor web: `/usr/share/nginx/html/`.
+
+### Evidencias de Instalación y Ejecución
+A continuación, se presentan las pruebas de que la instalación fue exitosa y de cómo la carpeta del proyecto reside y funciona dentro de los contenedores Docker:
+
+*Prueba del Proyecto en Docker:*
+![Prueba Docker Proyecto](prueba-dockers/Prueba_dockers_Proyecto.jpeg)
+
+*Prueba Docker (Ambiente Negro):*
+![Prueba Docker Negro](prueba-dockers/Prueba_dockers_negro.jpeg)
+
+*Prueba Docker (Ambiente Azul):*
+![Prueba Docker Azul](prueba-dockers/prueba_dockers_azul.jpeg)
