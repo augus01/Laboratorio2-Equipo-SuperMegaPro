@@ -467,3 +467,15 @@ main {
     margin-bottom: 30px;
     border-bottom: none;
 }
+
+.imagen-destacada-equipo {
+    width: 100%; /* Ocupa el ancho disponible de su contenedor */
+    max-width: 700px; /* Límite para que no se vea excesivamente grande en pantallas anchas */
+    aspect-ratio: 16 / 9; /* Fuerza la proporción 16:9 de forma nativa */
+    object-fit: cover; /* Evita que la imagen se estire o aplaste */
+    display: block;
+    margin: 15px auto 5px auto; /* Centra la imagen y da respiro al texto */
+    border-radius: 12px; /* Bordes redondeados que hacen juego con tu contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
+    border: 2px solid #dee2e6; /* Borde sutil igual al de la caja principal */
+}
