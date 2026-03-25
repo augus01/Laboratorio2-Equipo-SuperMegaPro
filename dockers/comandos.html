@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos Docker</title>
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- CSS ESPECÍFICO -->
+    <link rel="stylesheet" href="./stylesDockers.css">
+</head>
+<body>
+
+    <header>
+        <nav id="navegacion-principal">
+            <ul class="menu-lista">
+                <li><a href="../index.html#equipo">Equipo</a></li>
+                <li><a href="../index.html#miembros">Integrantes</a></li>
+                <li><a href="../index.html#docker">Docker</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="tutorial-hero">
+            <div class="tutorial-hero-badge">Referencia rápida</div>
+            <h1 id="titulo">Comandos Docker</h1>
+            <p class="tutorial-hero-desc">Guía de los comandos esenciales de Docker organizados por categoría. Úsala como referencia rápida durante el desarrollo.</p>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECCIÓN 1: IMÁGENES      -->
+        <!-- ======================== -->
+        <section class="tutorial-seccion">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">01</span>
+                <h2>Gestión de Imágenes</h2>
+            </div>
+
+            <div class="pasos-grid">
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">📥</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Descargar una imagen</h3>
+                        <p class="paso-desc">Descarga una imagen desde Docker Hub sin ejecutar ningún contenedor.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker pull &lt;imagen&gt;:&lt;tag&gt;</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Ejemplo</span>
+                            <code>docker pull nginx:alpine</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">📋</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Listar imágenes</h3>
+                        <p class="paso-desc">Muestra todas las imágenes descargadas en tu máquina local.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Comando</span>
+                            <code>docker images</code>
+                        </div>
+                        <div class="paso-tip">
+                            <span class="tip-icono">💡</span>
+                            <span>También puedes usar <code class="inline-code">docker image ls</code> como alternativa.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🔨</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Construir una imagen</h3>
+                        <p class="paso-desc">Crea una imagen propia a partir de un Dockerfile en la carpeta actual.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker build -t &lt;nombre&gt;:&lt;tag&gt; .</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Ejemplo</span>
+                            <code>docker build -t mi-web-html .</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🗑️</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Eliminar una imagen</h3>
+                        <p class="paso-desc">Borra una imagen de tu máquina local. La imagen no puede estar en uso por ningún contenedor.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker rmi &lt;imagen&gt;</code>
+                        </div>
+                        <div class="paso-alerta">
+                            <span class="alerta-icono">⚠️</span>
+                            <span>Detén y elimina primero los contenedores que usen la imagen.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECCIÓN 2: CONTENEDORES  -->
+        <!-- ======================== -->
+        <section class="tutorial-seccion seccion-alt">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">02</span>
+                <h2>Gestión de Contenedores</h2>
+            </div>
+
+            <div class="pasos-grid">
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">▶️</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Ejecutar un contenedor</h3>
+                        <p class="paso-desc">Crea y arranca un contenedor a partir de una imagen. Es el comando más usado en Docker.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker run -d -p &lt;host&gt;:&lt;contenedor&gt; --name &lt;nombre&gt; &lt;imagen&gt;</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Ejemplo</span>
+                            <code>docker run -d -p 8080:80 --name mi-web mi-web-html</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">📊</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Listar contenedores</h3>
+                        <p class="paso-desc">Muestra los contenedores activos. Con el flag <code class="inline-code">-a</code> muestra también los detenidos.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Solo activos</span>
+                            <code>docker ps</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Todos</span>
+                            <code>docker ps -a</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">⏹️</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Detener un contenedor</h3>
+                        <p class="paso-desc">Envía una señal de parada al contenedor para que se detenga de forma ordenada.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker stop &lt;nombre o ID&gt;</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Ejemplo</span>
+                            <code>docker stop mi-web-container</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🔁</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Iniciar un contenedor detenido</h3>
+                        <p class="paso-desc">Vuelve a arrancar un contenedor que fue detenido previamente sin recrearlo.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker start &lt;nombre o ID&gt;</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">Ejemplo</span>
+                            <code>docker start mi-web-container</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🗑️</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Eliminar un contenedor</h3>
+                        <p class="paso-desc">Borra un contenedor detenido de forma permanente. No elimina la imagen asociada.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker rm &lt;nombre o ID&gt;</code>
+                        </div>
+                        <div class="paso-alerta">
+                            <span class="alerta-icono">⚠️</span>
+                            <span>El contenedor debe estar detenido. Usa <code class="inline-code">docker stop</code> primero.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">💻</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Acceder al interior del contenedor</h3>
+                        <p class="paso-desc">Abre una terminal interactiva dentro del contenedor para inspeccionar o ejecutar comandos.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker exec -it &lt;nombre&gt; sh</code>
+                        </div>
+                        <div class="paso-tip">
+                            <span class="tip-icono">💡</span>
+                            <span>Usa <code class="inline-code">bash</code> en vez de <code class="inline-code">sh</code> si la imagen lo soporta.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECCIÓN 3: LOGS Y INFO   -->
+        <!-- ======================== -->
+        <section class="tutorial-seccion">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">03</span>
+                <h2>Logs e Información</h2>
+            </div>
+
+            <div class="pasos-grid">
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">📄</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Ver logs del contenedor</h3>
+                        <p class="paso-desc">Muestra la salida estándar del contenedor. Útil para depurar errores en la aplicación.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker logs &lt;nombre o ID&gt;</code>
+                        </div>
+                        <div class="paso-comando">
+                            <span class="comando-label">En tiempo real</span>
+                            <code>docker logs -f &lt;nombre o ID&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🔍</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Inspeccionar un contenedor</h3>
+                        <p class="paso-desc">Devuelve información detallada en JSON sobre la configuración y estado del contenedor.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Sintaxis</span>
+                            <code>docker inspect &lt;nombre o ID&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">📈</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Ver uso de recursos</h3>
+                        <p class="paso-desc">Muestra en tiempo real el consumo de CPU, memoria y red de los contenedores activos.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Comando</span>
+                            <code>docker stats</code>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECCIÓN 4: LIMPIEZA      -->
+        <!-- ======================== -->
+        <section class="tutorial-seccion seccion-alt">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">04</span>
+                <h2>Limpieza del sistema</h2>
+            </div>
+
+            <div class="pasos-grid">
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🧹</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Eliminar contenedores detenidos</h3>
+                        <p class="paso-desc">Borra todos los contenedores que no están en ejecución de una sola vez.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Comando</span>
+                            <code>docker container prune</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card">
+                    <div class="paso-numero cmd-icono">🧹</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Eliminar imágenes sin uso</h3>
+                        <p class="paso-desc">Borra todas las imágenes que no están siendo usadas por ningún contenedor.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Comando</span>
+                            <code>docker image prune -a</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paso-card paso-card-exito">
+                    <div class="paso-numero paso-numero-exito">⚡</div>
+                    <div class="paso-contenido">
+                        <h3 class="paso-titulo">Limpiar todo el sistema</h3>
+                        <p class="paso-desc">Elimina contenedores detenidos, imágenes sin uso, redes y caché de construcción en un solo comando.</p>
+                        <div class="paso-comando">
+                            <span class="comando-label">Comando</span>
+                            <code>docker system prune -a</code>
+                        </div>
+                        <div class="paso-alerta">
+                            <span class="alerta-icono">⚠️</span>
+                            <span>Este comando es irreversible. Revisa bien qué contenedores e imágenes tienes antes de ejecutarlo.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN ENTRE TUTORIALES -->
+        <section class="nav-tutoriales">
+            <a href="inst.html" class="btn-nav-tutorial btn-secundario">← Tutorial Instalación</a>
+            <a href="../index.html#docker" class="btn-nav-tutorial btn-primario">Volver al inicio →</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <ul class="menu-lista">
+            <li><a href="../index.html#equipo">Equipo</a></li>
+            <li><a href="../index.html#miembros">Integrantes</a></li>
+            <li><a href="../index.html#docker">Docker</a></li>
+            <li><a href="../index.html#contacto">Contacto</a></li>
+        </ul>
+        <p class="texto-destacado">© 2026 Grupo 1 SuperMegaPro. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
