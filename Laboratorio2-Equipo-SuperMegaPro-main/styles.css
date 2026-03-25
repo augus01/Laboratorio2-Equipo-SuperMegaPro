@@ -1,0 +1,481 @@
+/* =========================================
+   1. ESTILOS GLOBALES (Requerido por Rúbrica)
+   ========================================= */
+body {
+    font-family: Arial, sans-serif;
+    /* Tipografía global */
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. HEADER Y FOOTER (Color diferente al body)
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 25px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.menu-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.menu-lista a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.menu-lista a:hover {
+    color: #e67e22;
+}
+
+/* =========================================
+   3. JERARQUÍA DE TÍTULOS (Tamaños y colores)
+   ========================================= */
+
+h2 {
+    font-size: 2.4rem; /* +20% */
+    color: #1a252f;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem; /* +20% */
+    color: #2980b9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    margin-top: 18px;
+}
+
+#titulo {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#titulo-integrantes {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Nuevo estilo para el título de proyectos */
+.titulo-proyectos {
+    font-size: 1.2rem;
+    color: #e67e22;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+    text-transform: uppercase;
+}
+
+/* Estilo para la sección de introducción del equipo */
+.introduccionEquipo {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #dee2e6;
+}
+
+.introduccionEquipo h2 {
+    color: #495057;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.introduccionEquipo p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* =========================================
+   4. ALINEACIÓN HORIZONTAL (Sección Miembros)
+   ========================================= */
+#miembros {
+    display: flex;
+    /* Hace que las tarjetas se pongan de lado */
+    flex-wrap: wrap;
+    /* Permite que bajen si no hay espacio */
+    justify-content: center;
+    /* Centra las tarjetas en la pantalla */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+    padding: 40px 20px;
+}
+
+/* =========================================
+   5. TARJETA DE ESTUDIANTE (Requisitos de Rúbrica)
+   ========================================= */
+.tarjeta-estudiante {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    /* BORDE */
+    padding: 24px;
+    /* RELLENO (+20%) */
+    margin: 12px;
+    /* SEPARACIÓN (+20%) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* SOMBRA */
+    border-radius: 10px;
+    width: 360px;
+    /* Ancho fijo para consistencia (+20%) */
+    text-align: center;
+}
+
+/* =========================================
+   6. IMÁGENES (Ajustadas a la tarjeta)
+   ========================================= */
+.tarjeta-estudiante img {
+    width: 100%;
+    /* Se adapta al ancho de la tarjeta */
+    max-width: 240px;
+    /* Pero no crece más de 240px (+20%) */
+    height: 240px;
+    /* Altura fija para que todas sean iguales (+20%) */
+    object-fit: cover;
+    /* Evita que la imagen se estire feo */
+    border-radius: 50%;
+    /* Forma circular */
+    border: 4px solid #2980b9;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   7. CLASES ADICIONALES
+   ========================================= */
+.texto-destacado {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.lista-proyectos {
+    text-align: left;
+    /* Alinea los puntos de la lista a la izquierda */
+    font-size: 0.9rem;
+}
+
+.item-proyecto {
+    margin-bottom: 5px;
+}
+
+.separacion {
+    margin: 10px;
+    text-align: center;
+}
+
+.separacionP {
+    margin: 20px;
+}
+
+/* Estilo para el formulario de contacto */
+.form-contacto {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-contacto label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+.form-contacto button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-contacto button:hover {
+    background-color: #21618c;
+}
+
+/* =========================================
+   8. ENLACES DE TARJETAS
+   ========================================= */
+.enlace-tarjeta {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s;
+    border-radius: 8px;
+}
+.enlace-tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   9. ANIMACIONES DE ENTRADA Y MOTION DESIGN
+   ========================================= */
+@keyframes fadeInY {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInY 0.8s ease-out forwards;
+}
+
+/* =========================================
+   10. COMPOSICIÓN ARTÍSTICA DEL GRUPO (Assets)
+   ========================================= */
+.grupo-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.avatar-grupo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    margin-left: -20px;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.avatar-grupo:first-child {
+    margin-left: 0;
+}
+
+.avatar-grupo:hover {
+    transform: translateY(-10px) scale(1.1);
+    z-index: 10;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    border-color: #2980b9;
+}
+
+/* =========================================
+   11. SECCIÓN BLOGS (Estilo SuperMegaPro)
+   ========================================= */
+#blogs {
+    padding: 40px 20px;
+}
+
+.contenedor-blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    /* CAMBIO 1: Obliga a que todos los hijos midan lo mismo de alto */
+    align-items: stretch; 
+}
+
+.enlace-blog {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+    /* CAMBIO 2: Permite que el enlace ocupe todo el alto del contenedor */
+    display: flex; 
+}
+
+.tarjeta-blog {
+    background: white;
+    width: 340px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* CAMBIO 3: La tarjeta ahora ocupa el 100% del alto del enlace */
+    height: 100%; 
+}
+
+.blog-header {
+    height: 120px;
+    background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Evita que la cabecera se aplaste */
+    flex-shrink: 0; 
+}
+
+.tag-tutorial, .tag-investigacion {
+    background-color: #e67e22;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blog-cuerpo {
+    padding: 20px;
+    /* CAMBIO 4: El cuerpo crecerá para llenar el espacio vacío */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-cuerpo h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.blog-cuerpo p {
+    font-size: 0.95rem;
+    line-height: 1.6; /* Un poco más de aire para legibilidad */
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    /* CAMBIO 5: El párrafo empuja el "Leer más" hacia el fondo */
+    flex-grow: 1; 
+}
+
+.leer-mas {
+    color: #2980b9;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+    transition: letter-spacing 0.3s ease;
+    /* CAMBIO 6: Asegura que siempre esté al final de la tarjeta */
+    margin-top: auto; 
+}
+
+/* Efectos de Movimiento */
+.enlace-blog:hover {
+    transform: translateY(-8px);
+}
+
+.enlace-blog:hover .leer-mas {
+    letter-spacing: 1px;
+    color: #e67e22;
+}
+
+#titulo-blogs {
+    text-align: center;
+}
+
+/* ================================
+   12. SECCIÓN: LOS Cinco DESTINOS 
+   ================================ */
+.seccion-leyenda {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 50px 40px;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 950px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #dee2e6;
+}
+
+.texto-leyenda p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.texto-leyenda .texto-destacado {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.cita-leyenda {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #2980b9;
+    font-weight: bold;
+    margin: 35px auto;
+    padding: 20px 0;
+    border-top: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
+    max-width: 80% !important;
+    text-align: center;
+}
+
+#titulo-leyenda {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-bottom: none;
+}
+
+.imagen-destacada-equipo {
+    width: 100%; /* Ocupa el ancho disponible de su contenedor */
+    max-width: 700px; /* Límite para que no se vea excesivamente grande en pantallas anchas */
+    aspect-ratio: 16 / 9; /* Fuerza la proporción 16:9 de forma nativa */
+    object-fit: cover; /* Evita que la imagen se estire o aplaste */
+    display: block;
+    margin: 15px auto 5px auto; /* Centra la imagen y da respiro al texto */
+    border-radius: 12px; /* Bordes redondeados que hacen juego con tu contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
+    border: 2px solid #dee2e6; /* Borde sutil igual al de la caja principal */
+}
